@@ -1,0 +1,95 @@
+TIPO_EVENTO
+INSERT INTO tipo_evento (nombre) VALUES
+('Concierto'),
+('Feria'),
+('Deportivo'),
+('Cultural'),
+('Gastronómico');
+
+SPONSOR
+INSERT INTO sponsor (nombre) VALUES
+('Coca-Cola'),
+('Pepsi'),
+('Quilmes'),
+('YPF'),
+('Movistar');
+
+EVENTO
+INSERT INTO evento (nombre, descripcion, fecha_inicio, fecha_fin, precio, latitud, longitud, id_tipo, id_sponsor) VALUES
+('Rock Fest', 'Festival de rock', '2026-05-10', '2026-05-12', 5000, -26.82, -65.22, 1, 1),
+('Feria Norte', 'Feria regional', '2026-06-01', '2026-06-02', 0, -26.83, -65.20, 2, 2),
+('Maratón Tucumán', 'Evento deportivo', '2026-07-15', '2026-07-15', 2000, -26.81, -65.23, 3, 3),
+('Teatro Vivo', 'Obras culturales', '2026-08-05', '2026-08-07', 3000, -26.80, -65.21, 4, 4),
+('Sabores del Norte', 'Evento gastronómico', '2026-09-10', '2026-09-12', 2500, -26.84, -65.19, 5, 5);
+
+RESTAURANTE
+INSERT INTO restaurante (nombre, direccion, horario, tipo_comida, bebidas, rampa, celiacos) VALUES
+('El Buen Sabor', 'Calle 123', '10:00-23:00', 1, 1, 1, 0),
+('La Parrilla', 'Av. Siempre Viva', '12:00-00:00', 1, 1, 0, 0),
+('Veggie Life', 'Calle Verde', '09:00-21:00', 1, 1, 1, 1),
+('Fast Food X', 'Centro', '11:00-02:00', 1, 1, 0, 0),
+('Café Norte', 'Plaza Central', '08:00-20:00', 0, 1, 1, 1);
+
+HOTEL
+INSERT INTO hotel (nombre, direccion, descripcion) VALUES
+('Hotel Plaza', 'Centro 100', 'Hotel céntrico'),
+('Gran Hotel', 'Av. Principal', 'Hotel de lujo'),
+('Hotel Norte', 'Zona norte', 'Económico'),
+('Hotel Sur', 'Zona sur', 'Familiar'),
+('Hotel Tucumán', 'Capital', 'Turístico');
+
+HABITACION
+INSERT INTO habitacion (tipo, precio, capacidad, id_hotel) VALUES
+('Simple', 10000, 1, 1),
+('Doble', 15000, 2, 2),
+('Suite', 25000, 4, 3),
+('Familiar', 20000, 5, 4),
+('Premium', 30000, 2, 5);
+
+SERVICIO
+INSERT INTO servicio (nombre) VALUES
+('WiFi'),
+('Piscina'),
+('Desayuno'),
+('Gimnasio'),
+('Spa');
+
+CIRCUITO
+INSERT INTO circuito (nombre, descripcion) VALUES
+('Circuito Norte', 'Recorrido norte'),
+('Circuito Sur', 'Recorrido sur'),
+('Circuito Este', 'Recorrido este'),
+('Circuito Oeste', 'Recorrido oeste'),
+('Circuito Centro', 'Recorrido céntrico');
+
+LUGAR_TURISTICO
+INSERT INTO lugar_turistico (nombre, descripcion, ubicacion, id_circuito) VALUES
+('Cerro San Javier', 'Paisaje natural', 'Tucumán', 1),
+('Casa Histórica', 'Lugar histórico', 'Centro', 5),
+('Dique El Cadillal', 'Lago turístico', 'Norte', 1),
+('Museo Arte', 'Museo cultural', 'Centro', 5),
+('Parque 9 de Julio', 'Parque urbano', 'Capital', 5);
+
+ACTIVIDAD
+INSERT INTO actividad (nombre, descripcion) VALUES
+('Senderismo', 'Caminatas'),
+('Natación', 'Actividad acuática'),
+('Ciclismo', 'Deporte'),
+('Fotografía', 'Arte'),
+('Picnic', 'Recreación');
+
+LUGAR_ACTIVIDAD
+INSERT INTO lugar_actividad (id_lugar, id_actividad) VALUES
+(1,1),
+(2,4),
+(3,2),
+(4,4),
+(5,5);
+
+MULTIMEDIA
+INSERT INTO multimedia (url, tipo, id_evento, id_restaurante, id_hotel, id_lugar) VALUES
+('img1.jpg','imagen',1,NULL,NULL,NULL),
+('vid1.mp4','video',2,NULL,NULL,NULL),
+('img2.jpg','imagen',NULL,1,NULL,NULL),
+('img3.jpg','imagen',NULL,NULL,1,NULL),
+('img4.jpg','imagen',NULL,NULL,NULL,1);
